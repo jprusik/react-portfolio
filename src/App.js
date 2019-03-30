@@ -1,24 +1,20 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import AuthorSummary from './AuthorSummary';
+import PortfolioNav from './PortfolioNav';
+import PortfolioTimeline from './PortfolioTimeline';
 import './App.css';
+import data from './data.json';
 
 class App extends Component {
   render() {
+    const { author, projects, organizations } = data;
+
     return (
       <div className="App">
         <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
+          <AuthorSummary { ...author }/>
+          <PortfolioNav projects={ projects } />
+          <PortfolioTimeline projects={ projects } organizations={ organizations } />
         </header>
       </div>
     );
