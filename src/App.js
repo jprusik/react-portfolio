@@ -7,14 +7,14 @@ import data from './data.json';
 
 class App extends Component {
   render() {
-    const { author, projects, organizations } = data;
+    const { author, projects, organizations, education } = data;
 
     return (
       <div className="App">
         <header className="App-header">
           <AuthorSummary { ...author }/>
           <PortfolioNav projects={ projects } />
-          <PortfolioTimeline projects={ projects } organizations={ organizations } />
+          <PortfolioTimeline projects={ projects } organizations={ organizations } education= { education } />
         </header>
       </div>
     );
