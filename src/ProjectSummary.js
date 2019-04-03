@@ -1,6 +1,7 @@
 import React from 'react';
 import { object } from 'prop-types';
 import TypedList from './TypedList';
+import data from './data.json';
 
 export default function ProjectSummary(props) {
   const { project } = props;
@@ -21,6 +22,12 @@ export default function ProjectSummary(props) {
     return descriptionItems.length > 0 ? <div>({ descriptionItems.join(', ') })</div> : null;
   };
 
+  const projectTech = project.technologies.map(techKey => {
+    const techByKey = data.technologies.find(techItem => techItem.id === techKey);
+
+    return techByKey.name;
+  });
+
   return (
     <div key={project.id} className={project.id}>
       <div>
@@ -33,7 +40,7 @@ export default function ProjectSummary(props) {
       <TypedList key="project-link-list" headerText="Links" headerLevel={4} listItems={project.links} listType="links" />
       <TypedList key="project-samples-list" headerText="Samples" headerLevel={4} listItems={project.samples} listType="samples" />
       <TypedList key="project-skills-list" headerText="Skills" headerLevel={4} listItems={project.skills} listType="skills" />
-      <TypedList key="project-technologies-list" headerText="Technologies" headerLevel={4} listItems={project.technologies} listType="technologies" />
+      <TypedList key="project-technologies-list" headerText="Technologies" headerLevel={4} listItems={projectTech} listType="technologies" />
     </div>
   );
 }
