@@ -1,6 +1,7 @@
 import React from 'react';
 import TypedList from './TypedList';
 import { arrayOf, object } from 'prop-types';
+import './PortfolioNav.scss';
 
 export default function PortfolioNav(props) {
   const { projects } = props;
@@ -8,8 +9,8 @@ export default function PortfolioNav(props) {
   const technologies = [...new Set(projects.map((i)=>i.technologies).flat())];
 
   return [
-    <TypedList key="skills-list" headerText="Skills" headerLevel={3} listItems={skills} listType="skills" />,
-    <TypedList key="tech-list" headerText="Technologies" headerLevel={3} listItems={technologies} listType="technologies" />
+    <div key="skills" className="skills"><TypedList headerText="Skills" headerLevel={2} listItems={skills} listType="nav-skills" /></div>,
+    <div key="tech" className="technologies"><TypedList headerText="Technologies" headerLevel={2} listItems={technologies} listType="nav-technologies" /></div>
   ];
 }
 

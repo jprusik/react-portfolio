@@ -2,21 +2,31 @@ import React from 'react';
 import { arrayOf, object } from 'prop-types';
 import TypedList from './TypedList';
 import ProjectSummary from './ProjectSummary';
+import './OrgSummary.scss';
 
 export default function OrgSummary(props) {
   const { projects, org } = props;
-  const employedTimespan = <div>{ [ org.started, org.ended ].join(' - ') }</div>;
+  const employedTimespan = <div className="employed-timespan">{ [ org.started, org.ended ].join(' - ') }</div>;
+  const orgLocation = org.location && <span className="org-location">({ org.location })</span>;
 
   return (
-    <div className={org.id}>
-      <div className={`${org.id}-overview`}>
+    <div className={`org-summary ${org.id}`}>
+      <div className="org-overview">
         { org.name && <h4>{ org.name }</h4> }
-        { org.location && <h4>{ org.location }</h4> }
+        { orgLocation }
         { employedTimespan }
         { org.description && <p>{ org.description }</p> }
-        <TypedList key="org-roles-list" headerText="Roles" headerLevel={4} listItems={org.roles} listType="roles" />
-        <TypedList key="org-teams-list" headerText="Teams" headerLevel={4} listItems={org.teams} listType="teams" />
-        <TypedList key="org-recurring-tasks-list" headerText="Recurring Tasks" headerLevel={4} listItems={org.recurringTasks} listType="tasks" />
+        <div className="org-roles-and-teams">
+          <div className="org-roles">
+            <TypedList key="org-roles-list" headerText="Roles" headerLevel={5} listItems={org.roles} listType="roles" />
+          </div>
+          <div className="org-teams">
+            <TypedList key="org-teams-list" headerText="Teams" headerLevel={5} listItems={org.teams} listType="teams" />
+          </div>
+        </div>
+        <div className="org-tasks">
+          <TypedList key="org-recurring-tasks-list" headerText="Recurring Tasks" headerLevel={5} listItems={org.recurringTasks} listType="tasks" />
+        </div>
       </div>
       <div className={`${org.id}-projects`}>
         {

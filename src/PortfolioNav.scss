@@ -1,0 +1,17 @@
+@import 'styles/extends';
+
+.skills,
+.technologies {
+  text-align: center;
+}
+
+.nav-skills-list,
+.nav-technologies-list {
+  @extend %tag-style-list-items;
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 1rem;
+  justify-content: space-between;
+  align-content: space-around;
+  padding: 0;
+}

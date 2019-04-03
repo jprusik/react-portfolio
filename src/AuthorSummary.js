@@ -1,18 +1,19 @@
 import React from 'react';
 import { arrayOf, string, object } from 'prop-types';
 import SocialLinks from './SocialLinks';
+import './AuthorSummary.scss';
 
 export default function AuthorSummary(props) {
   const { currentRoles, funFacts, locationBasis, links, name } = props;
 
   return [
-    <h1 key="author-name">{name}</h1>,
-    <h2 key="author-roles">
+    <h1 key="author-name" className="author-name">{name}</h1>,
+    <div key="author-roles" className="author-roles">
       { currentRoles.map(role => <div key={ role }>{ role }</div>) }
-    </h2>,
-    <div key="author-location">{ locationBasis }</div>,
+    </div>,
+    <div key="author-location" className="author-location">{ locationBasis }</div>,
     <SocialLinks key="author-links" { ...links } />,
-    <div key="author-fun-facts">
+    <div key="author-fun-facts" className="author-fun-facts">
       { <div>{ funFacts.join(' • ') }</div> }
     </div>
   ];

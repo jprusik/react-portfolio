@@ -1,0 +1,37 @@
+@import 'styles/colors';
+
+.author-links {
+  display: flex;
+  min-width: 60%;
+  text-align: center;
+
+  a {
+    flex: 3 1 auto;
+    text-decoration: none;
+    color: $app-link-color;
+
+    svg {
+      font-size: 1rem;
+
+      &.fa-twitter {
+          color: $twitter-blue;
+      }
+
+      &.fa-linkedin {
+          color: $linkedin-blue;
+      }
+
+      &.fa-stack-overflow {
+          color: $stack-overflow-orange;
+      }
+
+      &.fa-github {
+          color: $github-grey;
+      }
+
+      &.fa-link {
+          color: $app-link-color;
+      }
+    }
+  }
+}

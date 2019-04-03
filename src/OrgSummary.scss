@@ -1,0 +1,52 @@
+.org-summary {
+  .org-location {
+    font-size: 0.75rem;
+    font-style: italic;
+    margin-left: 1em;
+  }
+
+  .org-roles-and-teams {
+    display: flex;
+    justify-content: space-between;
+
+    .org-roles {
+      text-align: right;
+      padding-right: 10px;
+    }
+
+    .org-teams {
+      text-align: left;
+      padding-left: 10px;
+    }
+
+    .org-roles,
+    .org-teams {
+      flex: 1 1 50%;
+
+      ul {
+        margin: 0;
+        padding: 0;
+      }
+    }
+  }
+
+  .org-tasks {
+    text-align: center;
+
+    .tasks-list {
+      display: flex;
+      flex-wrap: wrap;
+      padding: 0;
+      justify-content: center;
+
+      li {
+        &:not(:last-child) {
+          &:after {
+            content: '•';
+            padding: 1em;
+          }
+        }
+      }
+    }
+  }
+}

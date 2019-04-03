@@ -1,17 +1,23 @@
 import React from 'react';
 import { arrayOf, object } from 'prop-types';
+import './Education.scss';
 
 export default function Education(props) {
   const { education } = props;
 
   return (
     <div className="education">
+      <h3 className="education-header">Education & Training</h3>
       {
         education.map(entry => (
           <div key={entry.name} className="education-entry">
-            { entry.name && <h4>{ entry.name }</h4> }
-            { entry.year && <span>{ entry.year }</span> }
-            { entry.description && <p>{ entry.description }</p> }
+            <div className="education-name">
+              { entry.name && <h4>{ entry.name }</h4> }
+              { entry.year && <span>{ entry.year }</span> }
+            </div>
+            <div className="education-description">
+              { entry.description && <p>{ entry.description }</p> }
+            </div>
           </div>
         ))
       }

@@ -1,0 +1,17 @@
+@import 'colors';
+
+%tag-style-list-items {
+  flex-wrap: wrap;
+  font-size: 1rem;
+  justify-content: space-between;
+  padding: 0;
+
+  li {
+    background-color: $tag-background-color;
+    border-radius: 3px;
+    padding: 5px;
+    margin: 5px;
+    display: flex;
+    font-weight: bold;
+  }
+}

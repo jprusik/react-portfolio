@@ -1,5 +1,5 @@
 import React from 'react';
-import { string } from 'prop-types';
+import { string, array, oneOfType } from 'prop-types';
 
 export default function ExternalDomainLink(props) {
   const { href, children } = props;
@@ -9,5 +9,5 @@ export default function ExternalDomainLink(props) {
 
 ExternalDomainLink.propTypes = {
   href: string.isRequired,
-  children: string.isRequired
+  children: oneOfType([string, array]).isRequired
 };
