@@ -2,13 +2,15 @@
 
 .author-links {
   display: flex;
-  min-width: 60%;
   text-align: center;
 
   a {
     flex: 3 1 auto;
     text-decoration: none;
-    color: $app-link-color;
+
+    &:not(:last-child) {
+      padding-right: 1em;
+    }
 
     svg {
       font-size: 1rem;
@@ -30,7 +32,7 @@
       }
 
       &.fa-link {
-          color: $app-link-color;
+          color: $app-text-color;
       }
     }
   }

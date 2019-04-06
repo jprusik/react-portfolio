@@ -14,7 +14,7 @@ export default function AuthorSummary(props) {
     <div key="author-location" className="author-location">{ locationBasis }</div>,
     <SocialLinks key="author-links" { ...links } />,
     <div key="author-fun-facts" className="author-fun-facts">
-      { <div>{ funFacts.join(' • ') }</div> }
+      { funFacts.map(fact => <span key={fact}>{ fact }</span>) }
     </div>
   ];
 }
