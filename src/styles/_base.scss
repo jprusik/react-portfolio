@@ -24,4 +24,14 @@ h5 {
 
 a {
   color: $app-link-color;
+
+  &:visited,
+  &:hover {
+    color: $app-visited-link-color;
+  }
+}
+
+ul {
+  margin: 0;
+  padding: 0;
 }

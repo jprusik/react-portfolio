@@ -28,7 +28,7 @@ export default function OrgSummary(props) {
           <TypedList key="org-recurring-tasks-list" headerText="Recurring Tasks" headerLevel={5} listItems={org.recurringTasks} listType="tasks" />
         </div>
       </div>
-      <div className={`${org.id}-projects`}>
+      <div className="org-projects">
         {
           projects.map(project => (
             <ProjectSummary key={project.id} project={project} />

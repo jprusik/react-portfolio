@@ -2,6 +2,7 @@ import React from 'react';
 import { object } from 'prop-types';
 import TypedList from './TypedList';
 import data from './data.json';
+import './ProjectSummary.scss';
 
 export default function ProjectSummary(props) {
   const { project } = props;
@@ -29,18 +30,39 @@ export default function ProjectSummary(props) {
   });
 
   return (
-    <div key={project.id} className={project.id}>
-      <div>
-        <h5>{ project.name }</h5>
-        { projectAudienceDescription(project.audience, project.openSource) }
+    <div key={project.id} className={`org-project ${project.id}`}>
+      <div className="title-section">
+        <div className="title">
+          <h5>{ project.name }</h5>
+          { projectAudienceDescription(project.audience, project.openSource) }
+        </div>
+        { project.year && <div className="year">year: { project.year }</div> }
+        { teamSizeDescription(project.teamSize) }
       </div>
-      { project.year && <div>year: { project.year }</div> }
-      { teamSizeDescription(project.teamSize) }
-      { project.description && <p className="project-description">{ project.description }</p> }
-      <TypedList key="project-link-list" headerText="Links" headerLevel={4} listItems={project.links} listType="links" />
-      <TypedList key="project-samples-list" headerText="Samples" headerLevel={4} listItems={project.samples} listType="samples" />
-      <TypedList key="project-skills-list" headerText="Skills" headerLevel={4} listItems={project.skills} listType="skills" />
-      <TypedList key="project-technologies-list" headerText="Technologies" headerLevel={4} listItems={projectTech} listType="technologies" />
+      { project.description && <p className="description">{ project.description }</p> }
+      { project.links.length > 0 &&
+        <div className="links">
+          <TypedList headerText="Links" headerLevel={4} listItems={project.links} listType="links" />
+        </div>
+      }
+      {
+        project.samples.length > 0 &&
+        <div className="samples">
+          <TypedList headerText="Samples" headerLevel={4} listItems={project.samples} listType="samples" />
+        </div>
+      }
+      {
+        project.skills.length > 0 &&
+        <div className="skills">
+          <TypedList headerText="Skills" headerLevel={4} listItems={project.skills} listType="skills" />
+        </div>
+      }
+      {
+        project.technologies.length > 0 &&
+        <div className="technologies">
+          <TypedList headerText="Technologies" headerLevel={4} listItems={projectTech} listType="technologies" />
+        </div>
+      }
     </div>
   );
 }
