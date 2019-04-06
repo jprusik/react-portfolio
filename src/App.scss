@@ -1,16 +1,17 @@
 @import 'styles/colors';
+@import 'styles/layout';
 
 .app {
   background-color: $app-background-color;
 
   .app-body {
-    min-height: 100vh;
-    max-width: 66%;
-    margin: auto;
+    align-items: center;
+    color: $app-text-color;
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: center;
-    color: $app-text-color;
+    margin: auto;
+    max-width: $body-content-width;
+    min-height: 100vh;
   }
 }

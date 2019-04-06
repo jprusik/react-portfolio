@@ -1,11 +1,19 @@
-.author-name,
+@import 'styles/layout';
+
+.author-name {
+  margin: ($section-margin * 2) auto;
+}
+
 .author-roles,
-.author-location,
-.author-fun-facts {
+.author-location {
+  margin-bottom: $section-margin;
   text-align: center;
 }
 
 .author-fun-facts {
+  font-style: italic;
+  margin-bottom: $section-margin * 2;
+
   span {
     &:not(:last-child) {
       &:after {

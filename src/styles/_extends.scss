@@ -1,4 +1,5 @@
 @import 'colors';
+@import 'layout';
 
 %tag-style-list-items {
   flex-wrap: wrap;
@@ -8,7 +9,7 @@
 
   li {
     background-color: $tag-background-color;
-    border-radius: 3px;
+    border-radius: $border-radius;
     padding: 5px;
     margin: 5px;
     display: flex;

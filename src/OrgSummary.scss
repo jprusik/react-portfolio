@@ -1,49 +1,68 @@
+@import 'styles/colors';
+@import 'styles/layout';
+
 .org-summary {
-  .org-location {
-    font-size: 0.75rem;
-    font-style: italic;
-    margin-left: 1em;
-  }
+  background-color: lighten($app-background-color, 10%);
+  padding: $section-padding;
+  margin: $section-margin 0;
 
-  .org-roles-and-teams {
-    display: flex;
-    justify-content: space-between;
+  .org-overview {
+    margin-bottom: $section-margin;
 
-    .org-roles {
-      padding-right: 10px;
-      text-align: right;
+    h4, h5 {
+      margin: 0;
     }
 
-    .org-teams {
-      padding-left: 10px;
-      text-align: left;
+    p {
+      margin: ($inline-sibling-margin * 2) auto;
     }
 
-    .org-roles,
-    .org-teams {
-      flex: 1 1 50%;
+    .org-location {
+      font-size: 0.75rem;
+      font-style: italic;
+    }
 
-      ul {
-        margin: 0;
-        padding: 0;
+    .org-roles-and-teams {
+      display: flex;
+      justify-content: space-between;
+      margin: ($inline-sibling-margin * 2) auto;
+
+      .org-roles {
+        padding-right: $inline-sibling-margin;
+        text-align: right;
+      }
+
+      .org-teams {
+        padding-left: $inline-sibling-margin;
+        text-align: left;
+      }
+
+      .org-roles,
+      .org-teams {
+        flex: 1 1 50%;
+
+        ul {
+          margin: 0;
+          padding: 0;
+        }
       }
     }
-  }
 
-  .org-tasks {
-    text-align: center;
+    .org-tasks {
+      text-align: center;
 
-    .tasks-list {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      padding: 0;
+      .tasks-list {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 0;
 
-      li {
-        &:not(:last-child) {
-          &:after {
-            content: '•';
-            padding: 1em;
+        li {
+          &:not(:last-child) {
+            &:after {
+              content: '•';
+              padding: $inline-character-margin;
+            }
           }
         }
       }

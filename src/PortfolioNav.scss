@@ -8,6 +8,7 @@
 .nav-skills-list,
 .nav-technologies-list {
   @extend %tag-style-list-items;
+  margin: $section-margin 0;
   display: flex;
   flex-wrap: wrap;
   font-size: 1rem;

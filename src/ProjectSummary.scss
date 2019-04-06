@@ -1,16 +1,19 @@
 @import 'styles/colors';
+@import 'styles/layout';
+
+$project-width-basis: 100vw - $body-content-width - $section-padding - ($inline-sibling-margin * 2) - ($section-padding * 2);
 
 .org-project {
   align-content: flex-start;
-  background-color: darken($tag-background-color, 20%);
-  border-radius: 3px;
+  background-color: lighten($app-background-color, 20%);
+  border-radius: $border-radius;
   border: 1px solid darken($app-text-color, 20%);
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  flex: 1 2 40%;
-  margin: 10px;
-  padding: 20px;
+  flex: 1 2 $project-width-basis;
+  margin: $inline-sibling-margin;
+  padding: $section-padding / 2;
 
   .title {
     h5 {
@@ -27,7 +30,7 @@
   .samples,
   .title-section {
     flex: 2 2 100%;
-    margin-bottom: 1em;
+    margin: 0 auto ($inline-sibling-margin * 2) auto;
   }
 
   .links,
@@ -41,7 +44,7 @@
         &:not(:last-child) {
           &:after {
             content: '•';
-            padding: 0.5em;
+            padding: $inline-character-margin;
           }
         }
       }
