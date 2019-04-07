@@ -1,7 +1,14 @@
 @import 'styles/layout';
+@import 'styles/colors';
 
-.author-name {
+.author-logo {
   margin: ($section-margin * 2) auto;
+  max-width: $body-content-width * 0.75;
+  position: relative;
+
+  path {
+    fill: $app-text-color;
+  }
 }
 
 .author-roles,
