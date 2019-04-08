@@ -11,7 +11,7 @@ export default function ProjectSummary(props) {
     if (!teamSize) {
       return null;
     }
-    const teamDescription = teamSize === 'solo' ? 'solo effort' : `team of ${teamSize}`;
+    const teamDescription = teamSize === 'solo' ? 'solo development' : `team of ${teamSize} developers`;
 
     return <div className="team-size">{ teamDescription } </div>;
   };
