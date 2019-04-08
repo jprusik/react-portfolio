@@ -9721,6 +9721,26 @@ typedarray@^0.0.6:
   resolved "https://registry.yarnpkg.com/typedarray/-/typedarray-0.0.6.tgz#867ac74e3864187b1d3d47d996a78ec5c8830777"
   integrity sha1-hnrHTjhkGHsdPUfZlqeOxciDB3c=
 
+typeface-alegreya-sans-sc@^0.0.54:
+  version "0.0.54"
+  resolved "https://registry.yarnpkg.com/typeface-alegreya-sans-sc/-/typeface-alegreya-sans-sc-0.0.54.tgz#d59cd512372ce2caf9184e7bc082ee30b42c33b3"
+  integrity sha512-OAPPir82dtEdCyY3ctpieN0QsHr0V/9ZSFoD/lcfNxpOL0zA7LaR5RL2YY/lilwXg43kTW4GjH5vJ59YD8lZvA==
+
+typeface-aleo@^0.0.69:
+  version "0.0.69"
+  resolved "https://registry.yarnpkg.com/typeface-aleo/-/typeface-aleo-0.0.69.tgz#887a411122e0eb109f478fc2f9164be7492984fd"
+  integrity sha512-GWQ1BrgQfu0TFSr1TQTXhPocb+sAequcbVO6R+TEh7rpo9l4CN4hdHLq0Z32pKNJqAH6FW3B/GA1cGHbhhdVjQ==
+
+typeface-ubuntu-condensed@^0.0.72:
+  version "0.0.72"
+  resolved "https://registry.yarnpkg.com/typeface-ubuntu-condensed/-/typeface-ubuntu-condensed-0.0.72.tgz#64d152418c5dd54b67f743de5d143193cae1f2b1"
+  integrity sha512-cOX0pPTePkhK3aHcng0kustIT6iOfMNtjUhbjjpQW1IOT8hQHXH6jqEbVZaCQxvhFjpgygIqiDzVigGF9yeNCQ==
+
+typeface-ubuntu-mono@^0.0.72:
+  version "0.0.72"
+  resolved "https://registry.yarnpkg.com/typeface-ubuntu-mono/-/typeface-ubuntu-mono-0.0.72.tgz#3ecdb1dc90900522451c90661da7ae316a6fdb8b"
+  integrity sha512-l+Tt4NVCeceb42wNk3iev35xt3d+O3NxPtYq90k70OXjbtQtvUGDNaDB9uouJ1Y7Co0V6DgKHNS5S5ljBz9QRA==
+
 uglify-js@3.4.x:
   version "3.4.10"
   resolved "https://registry.yarnpkg.com/uglify-js/-/uglify-js-3.4.10.tgz#9ad9563d8eb3acdfb8d38597d2af1d815f6a755f"

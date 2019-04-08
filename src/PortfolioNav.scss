@@ -1,18 +1,21 @@
 @import 'styles/extends';
+@import 'styles/font';
 
 .skills,
 .technologies {
   text-align: center;
-}
 
-.nav-skills-list,
-.nav-technologies-list {
-  @extend %tag-style-list-items;
-  margin: $section-margin 0;
-  display: flex;
-  flex-wrap: wrap;
-  font-size: 1rem;
-  justify-content: space-between;
-  align-content: space-around;
-  padding: 0;
+  .nav-skills-list,
+  .nav-technologies-list {
+    @extend %tag-style-list-items;
+    margin: ($section-margin / 3) 0 $section-margin 0;
+    display: flex;
+    flex-wrap: wrap;
+    font-size: $sub-base-font-size;
+    font-family: $condensed-font;
+    text-shadow: 1px 1px 0 #3d3d3d;
+    justify-content: space-between;
+    align-content: space-around;
+    padding: 0;
+  }
 }

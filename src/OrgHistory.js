@@ -5,7 +5,7 @@ import './OrgHistory.scss';
 
 export default function OrgHistory(props) {
   const { projects, organizations } = props;
-  const orgHeader = <h3 key="organizations-header">Organizations</h3>;
+  const orgHeader = <h2 key="organizations-header">Organizations</h2>;
   const orgSummaries = organizations.map(org => {
     const orgProjects = projects.filter(project => project.org === org.id);
     const orgSummaryProps = {

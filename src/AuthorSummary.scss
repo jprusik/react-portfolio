@@ -13,13 +13,13 @@
 
 .author-roles,
 .author-location {
-  margin-bottom: $section-margin;
+  margin-bottom: $inline-character-margin;
   text-align: center;
 }
 
 .author-fun-facts {
   font-style: italic;
-  margin-bottom: $section-margin * 2;
+  margin-bottom: $section-margin;
 
   span {
     &:not(:last-child) {

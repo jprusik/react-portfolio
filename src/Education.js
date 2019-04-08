@@ -7,7 +7,7 @@ export default function Education(props) {
 
   return (
     <div className="education">
-      <h3 className="education-header">Education & Training</h3>
+      <h2 className="education-header">Education & Training</h2>
       {
         education.map(entry => (
           <div key={entry.name} className="education-entry">

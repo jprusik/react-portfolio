@@ -1,6 +1,21 @@
-$base-font-size: calc(11px + 1vmin);
+$base-font-size: 2vmin;
+$small-base-font-size: 11px;
+$sub-base-font-size: 0.8rem;
+$type-ratio: 1.333;
+
 $h5-font-size: $base-font-size;
-$h4-font-size: calc(11px + 1.5vmin);
-$h3-font-size: calc(11px + 2vmin);
-$h2-font-size: calc(11px + 2.5vmin);
-$h1-font-size: calc(11px + 5vmin);
+$h4-font-size: $base-font-size * $type-ratio;
+$h3-font-size: $h4-font-size * $type-ratio;
+$h2-font-size: $h3-font-size * $type-ratio;
+$h1-font-size: $h2-font-size * $type-ratio;
+
+$small-h5-font-size: $small-base-font-size;
+$small-h4-font-size: $small-base-font-size * $type-ratio;
+$small-h3-font-size: $h4-font-size * $type-ratio;
+$small-h2-font-size: $h3-font-size * $type-ratio;
+$small-h1-font-size: $h2-font-size * $type-ratio;
+
+$body-font: 'Aleo';
+$condensed-font: 'Ubuntu Condensed';
+$header-font: 'Alegreya Sans SC';
+$monospace-font: 'Ubuntu Mono';
