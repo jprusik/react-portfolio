@@ -1,5 +1,5 @@
-@import 'styles/layout';
 @import 'styles/colors';
+@import 'styles/layout';
 
 .author-logo {
   margin: ($section-margin * 2) auto;
@@ -17,9 +17,17 @@
   text-align: center;
 }
 
+.author-location {
+  font-style: italic;
+}
+
 .author-fun-facts {
   font-style: italic;
   margin-bottom: $section-margin;
+  color: $app-text-note;
+  border-top: 1px dotted $app-text-note;
+  border-bottom: 1px dotted $app-text-note;
+  padding: 0.5em 0;
 
   span {
     &:not(:last-child) {

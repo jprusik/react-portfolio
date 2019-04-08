@@ -3,19 +3,22 @@
 
 .author-links {
   display: flex;
-  text-align: center;
+  flex-wrap: wrap;
+  justify-content: space-between;
   margin-bottom: $section-margin;
+  text-align: center;
 
   a {
     flex: 3 1 auto;
     text-decoration: none;
 
     &:not(:last-child) {
-      padding-right: 1em;
+      padding-right: $inline-character-margin * 4;
     }
 
     svg {
       font-size: 1rem;
+      margin-right: $inline-character-margin;
 
       &.fa-twitter {
           color: $twitter-blue;
@@ -33,7 +36,8 @@
           color: $github-grey;
       }
 
-      &.fa-link {
+      &.fa-link,
+      &.fa-envelope {
           color: $app-text-color;
       }
     }

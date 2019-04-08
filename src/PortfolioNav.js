@@ -9,8 +9,8 @@ export default function PortfolioNav(props) {
   const technologies = [...new Set(projects.map((i)=>i.technologies).flat())];
 
   return [
-    <div key="skills" className="skills"><TypedList headerText="Skills" headerLevel={2} listItems={skills} listType="nav-skills" /></div>,
-    <div key="tech" className="technologies"><TypedList headerText="Technologies" headerLevel={2} listItems={technologies} listType="nav-technologies" /></div>
+    <div key="tech" className="technologies"><TypedList headerText="Technologies" headerLevel={2} listItems={technologies} listType="nav-technologies" /></div>,
+    <div key="skills" className="skills"><TypedList headerText="Skills" headerLevel={2} listItems={skills} listType="nav-skills" /></div>
   ];
 }
 
