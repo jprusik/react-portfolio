@@ -1,19 +1,19 @@
 @import 'styles/colors';
 @import 'styles/layout';
 
-$project-width-basis: 100vw - $body-content-width - $section-padding - ($inline-sibling-margin * 2) - ($section-padding * 2);
+$desktop-view-project-columns: 2;
 
 .org-project {
   align-content: flex-start;
   background-color: lighten($app-background-color, 20%);
   border-radius: $border-radius;
-  border: 1px solid darken($app-text-color, 20%);
+  border: 1px solid darken($app-text-color, 50%);
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  flex: 1 2 $project-width-basis;
+  flex: 2 1 ($small-viewport-breakpoint / $desktop-view-project-columns);
   margin: $inline-sibling-margin;
-  padding: $section-padding / 2;
+  padding: $section-padding;
 
   .title {
     h5 {
@@ -23,6 +23,10 @@ $project-width-basis: 100vw - $body-content-width - $section-padding - ($inline-
 
   h4 {
     margin: 0 0 $inline-character-margin 0;
+  }
+
+  .description {
+    max-width: $small-viewport-breakpoint;
   }
 
   .description,
@@ -55,6 +59,6 @@ $project-width-basis: 100vw - $body-content-width - $section-padding - ($inline-
   .technologies {
     flex: 2 1 auto;
     margin: 0 auto;
-    max-width: 50%;
+    width: 50%;
   }
 }
