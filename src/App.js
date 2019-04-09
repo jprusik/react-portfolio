@@ -3,7 +3,7 @@ import AuthorSummary from './AuthorSummary';
 import PortfolioNav from './PortfolioNav';
 import PortfolioTimeline from './PortfolioTimeline';
 import './App.scss';
-import data from './data.json';
+import data from './content/data.json';
 
 class App extends Component {
   render() {
