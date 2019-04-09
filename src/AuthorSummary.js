@@ -2,7 +2,7 @@ import React from 'react';
 import { arrayOf, string, object } from 'prop-types';
 import SocialLinks from './SocialLinks';
 import './AuthorSummary.scss';
-import { ReactComponent as Logo } from './logo.svg';
+import { ReactComponent as Logo } from './content/logo.svg';
 
 export default function AuthorSummary(props) {
   const { currentRoles, funFacts, locationBasis, links, name } = props;
