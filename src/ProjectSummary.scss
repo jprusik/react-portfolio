@@ -1,4 +1,5 @@
 @import 'styles/colors';
+@import 'styles/font';
 @import 'styles/layout';
 
 $desktop-view-project-columns: 2;
@@ -15,34 +16,82 @@ $desktop-view-project-columns: 2;
   margin: $inline-sibling-margin;
   padding: $section-padding;
 
-  .title {
-    h5 {
-      margin: 0;
+  .title-section {
+    text-align: left;
+
+    .title {
+      h4 {
+        margin: 0 0 $inline-character-margin 0;
+      }
+
+      div {
+        font-size: $sub-base-font-size;
+      }
+    }
+
+    .team-size,
+    .year {
+      font-size: $sub-base-font-size;
     }
   }
 
-  h4 {
-    margin: 0 0 $inline-character-margin 0;
+  .description {
+    font-family: $condensed-font;
+    text-align: left;
   }
 
-  .description {
+  .links {
+    padding-top: $inline-sibling-margin * 2;
+  }
+
+  .samples {
+    padding-bottom: $inline-sibling-margin * 2;
+  }
+
+  .two-column-flex {
+    display: flex;
+
+    .skills,
+    .technologies {
+      flex: 2 1 auto;
+      margin: 0 auto;
+      text-align: left;
+      width: 50%;
+    }
+  }
+
+  .description,
+  .title-section,
+  .two-column-flex {
     max-width: $small-viewport-breakpoint;
   }
 
   .description,
   .links,
   .samples,
-  .title-section {
+  .title-section,
+  .two-column-flex {
     flex: 2 2 100%;
     margin: 0 auto ($inline-sibling-margin * 2) auto;
   }
 
   .links,
   .samples {
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+
+    h5 {
+      flex: 2 1 4vw;
+      text-align: left;
+    }
+
     ul {
       display: flex;
       flex-wrap: wrap;
-      justify-content: center;
+      flex: 2 1 80%;
+      justify-content: flex-start;
+      margin-left: $inline-character-margin;
 
       li {
         &:not(:last-child) {
@@ -53,12 +102,5 @@ $desktop-view-project-columns: 2;
         }
       }
     }
-  }
-
-  .skills,
-  .technologies {
-    flex: 2 1 auto;
-    margin: 0 auto;
-    width: 50%;
   }
 }

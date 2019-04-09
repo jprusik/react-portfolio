@@ -1,7 +1,7 @@
 import React from 'react';
 import { object } from 'prop-types';
 import TypedList from './TypedList';
-import data from './data.json';
+import data from './content/data.json';
 import './ProjectSummary.scss';
 
 export default function ProjectSummary(props) {
@@ -36,7 +36,7 @@ export default function ProjectSummary(props) {
           <h4>{ project.name }</h4>
           { projectAudienceDescription(project.audience, project.openSource) }
         </div>
-        { project.year && <div className="year">year: { project.year }</div> }
+        { project.year && <div className="year">{ project.year }</div> }
         { teamSizeDescription(project.teamSize) }
       </div>
       { project.description && <p className="description">{ project.description }</p> }
@@ -51,18 +51,20 @@ export default function ProjectSummary(props) {
           <TypedList headerText="Samples" headerLevel={5} listItems={project.samples} listType="samples" />
         </div>
       }
-      {
-        project.skills.length > 0 &&
-        <div className="skills">
-          <TypedList headerText="Skills" headerLevel={5} listItems={project.skills} listType="skills" />
-        </div>
-      }
-      {
-        project.technologies.length > 0 &&
-        <div className="technologies">
-          <TypedList headerText="Technologies" headerLevel={5} listItems={projectTech} listType="technologies" />
-        </div>
-      }
+      <div className="two-column-flex">
+        {
+          project.skills.length > 0 &&
+          <div className="skills">
+            <TypedList headerText="Skills" headerLevel={5} listItems={project.skills} listType="skills" />
+          </div>
+        }
+        {
+          project.technologies.length > 0 &&
+          <div className="technologies">
+            <TypedList headerText="Technologies" headerLevel={5} listItems={projectTech} listType="technologies" />
+          </div>
+        }
+      </div>
     </div>
   );
 }
