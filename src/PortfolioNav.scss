@@ -1,3 +1,4 @@
+@import 'styles/colors';
 @import 'styles/extends';
 @import 'styles/font';
 
@@ -13,7 +14,7 @@
     flex-wrap: wrap;
     font-size: $sub-base-font-size;
     font-family: $condensed-font;
-    text-shadow: 1px 1px 0 #3d3d3d;
+    text-shadow: 1px 1px 0 $black;
     justify-content: space-between;
     align-content: space-around;
     padding: 0;
