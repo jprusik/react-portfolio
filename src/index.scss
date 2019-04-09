@@ -5,7 +5,7 @@
 html {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-  font-family: $body-font, sans-serif;
+  font-family: $serif-font;
   font-size: $base-font-size;
   text-rendering: optimizeLegibility;
 
@@ -27,11 +27,11 @@ html {
   }
 
   code {
-    font-family: $monospace-font, monospace;
+    font-family: $monospace-font;
   }
 
   h1, h2, h3, h4, h5 {
-    font-family: $header-font;
+    font-family: $sans-serif-font-smallcaps;
     margin: 0;
   }
 
@@ -49,6 +49,7 @@ html {
   }
 
   h3 {
+    font-family: $serif-font;
     font-size: $h3-font-size;
   }
 

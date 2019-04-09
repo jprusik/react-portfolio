@@ -15,7 +15,7 @@ $small-h3-font-size: $h4-font-size * $type-ratio;
 $small-h2-font-size: $h3-font-size * $type-ratio;
 $small-h1-font-size: $h2-font-size * $type-ratio;
 
-$body-font: 'Aleo';
-$condensed-font: 'Ubuntu Condensed';
-$header-font: 'Alegreya Sans SC';
-$monospace-font: 'Ubuntu Mono';
+$serif-font: 'Aleo', serif;
+$condensed-font: 'Ubuntu Condensed', serif;
+$sans-serif-font-smallcaps: 'Alegreya Sans SC', sans-serif;
+$monospace-font: 'Ubuntu Mono', monospace;

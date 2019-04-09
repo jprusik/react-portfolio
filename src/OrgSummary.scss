@@ -12,10 +12,16 @@
 
     h4, h5 {
       margin: 0;
+      font-family: $serif-font;
     }
 
     p {
+      font-family: $serif-font;
       margin: ($inline-sibling-margin * 2) auto;
+    }
+
+    .employed-timespan {
+      font-size: $sub-base-font-size;
     }
 
     .org-location {
