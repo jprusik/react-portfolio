@@ -1,19 +1,29 @@
 @import 'styles/colors';
+@import 'styles/font';
 @import 'styles/layout';
 
-.author-links {
+.author-links-primary {
+  margin-bottom: $inline-character-margin;
+}
+
+.author-links-secondary {
+  margin-bottom: $section-margin;
+}
+
+.author-links-primary,
+.author-links-secondary {
   display: flex;
   flex-wrap: wrap;
+  font-family: $condensed-font;
   justify-content: space-between;
-  margin-bottom: $section-margin;
   text-align: center;
 
   a {
-    flex: 3 1 auto;
+    flex: 1 1 auto;
     text-decoration: none;
 
     &:not(:last-child) {
-      padding-right: $inline-character-margin * 4;
+      margin-right: $inline-character-margin * 4;
     }
 
     svg {
