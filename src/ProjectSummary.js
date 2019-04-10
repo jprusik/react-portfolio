@@ -30,7 +30,7 @@ export default function ProjectSummary(props) {
   });
 
   return (
-    <div key={project.id} className={`org-project ${project.id}`}>
+    <div key={project.id} className={`org-project ${project.id} print-hide`}>
       <div className="title-section">
         <div className="title">
           <h4>{ project.name }</h4>

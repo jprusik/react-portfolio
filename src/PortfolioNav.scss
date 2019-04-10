@@ -9,14 +9,20 @@
   .nav-skills-list,
   .nav-technologies-list {
     @extend %tag-style-list-items;
-    margin: ($section-margin / 3) 0 $section-margin 0;
+    align-content: space-around;
     display: flex;
     flex-wrap: wrap;
-    font-size: $sub-base-font-size;
     font-family: $condensed-font;
-    text-shadow: 1px 1px 0 $black;
+    font-size: $sub-base-font-size;
     justify-content: space-between;
-    align-content: space-around;
+    margin: ($section-margin / 3) 0 $section-margin 0;
     padding: 0;
+    text-shadow: 1px 1px 0 $black;
+
+    @media print {
+      font-size: $sub-base-font-size;
+      justify-content: center;
+      text-shadow: none;
+    }
   }
 }

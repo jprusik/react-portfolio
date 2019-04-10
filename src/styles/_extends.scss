@@ -10,9 +10,14 @@
   li {
     background-color: $tag-background-color;
     border-radius: $border-radius;
-    padding: 5px;
-    margin: 5px;
     display: flex;
     font-weight: bold;
+    margin: 5px;
+    padding: 5px;
+
+    @media print {
+      background-color: #FFF;
+      padding: 0;
+    }
   }
 }

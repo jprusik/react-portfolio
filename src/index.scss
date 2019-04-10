@@ -13,12 +13,12 @@ html {
   a {
     color: $app-link-color;
 
-    &:visited {
-      color: darken($app-link-color, 20%);
-    }
-
     &:hover {
       color: $app-visited-link-color;
+    }
+
+    &:visited {
+      color: darken($app-link-color, 20%);
     }
   }
 
@@ -106,5 +106,41 @@ html {
     h5 {
       font-size: $h5-font-size;
     }
+  }
+
+  .print-show {
+    display: none;
+  }
+}
+
+@media print {
+  html {
+    width: 100%;
+    margin: 0;
+    background-color: #FFF;
+
+    a {
+      color: invert($app-text-color);
+
+      &:hover,
+      &:visited {
+        color: invert($app-text-color);
+      }
+    }
+
+    body {
+      .app {
+        max-width: 90%;
+        color: invert($app-text-color);
+      }
+    }
+  }
+
+  .print-hide {
+    display: none !important;
+  }
+
+  .print-show {
+    display: flex !important;
   }
 }

@@ -8,6 +8,10 @@
 
   path {
     fill: $app-text-color;
+
+    @media print {
+      fill: invert($app-text-color);
+    }
   }
 }
 
@@ -28,6 +32,12 @@
   border-top: 1px dotted $app-text-note;
   border-bottom: 1px dotted $app-text-note;
   padding: 0.5em 0;
+
+  @media print {
+    color: invert($app-text-note);
+    border-top: 1px dotted invert($app-text-note);
+    border-bottom: 1px dotted invert($app-text-note);
+  }
 
   span {
     &:not(:last-child) {

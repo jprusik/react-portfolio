@@ -31,7 +31,7 @@ export default function SocialLinks(props) {
     <div key="author-links-primary" className="author-links-primary">
       { [emailLink, websiteLink ] }
     </div>,
-    <div key="author-links-secondary" className="author-links-secondary">
+    <div key="author-links-secondary" className="author-links-secondary print-hide">
       { [githubLink, stackOverflowLink, linkedInLink, twitterLink ] }
     </div>
   ];
