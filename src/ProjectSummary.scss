@@ -61,18 +61,13 @@ $desktop-view-project-columns: 2;
   }
 
   .description,
-  .title-section,
-  .two-column-flex {
-    max-width: $small-viewport-breakpoint;
-  }
-
-  .description,
   .links,
   .samples,
   .title-section,
   .two-column-flex {
     flex: 2 2 100%;
     margin: 0 auto ($inline-sibling-margin * 2) auto;
+    max-width: $small-viewport-breakpoint;
   }
 
   .links,
