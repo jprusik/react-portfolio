@@ -33,6 +33,7 @@
   "scripts": {
     "start": ". ./src/content/.env && react-scripts start",
     "build": ". ./src/content/.env && react-scripts build && cp ./src/content/favicon.ico ./build/favicon.ico ; cp ./src/content/manifest.json ./build/manifest.json",
+    "deploy": "./src/content/deploy.sh",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   }
