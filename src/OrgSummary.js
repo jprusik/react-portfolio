@@ -3,6 +3,7 @@ import { arrayOf, object } from 'prop-types';
 import TypedList from './TypedList';
 import ProjectSummary from './ProjectSummary';
 import './OrgSummary.scss';
+import { orderBy } from 'lodash';
 
 export default function OrgSummary(props) {
   const { projects, org } = props;
@@ -30,7 +31,7 @@ export default function OrgSummary(props) {
       </div>
       <div className="org-projects">
         {
-          projects.map(project => (
+          orderBy(projects, ['year'], ['desc']).map(project => (
             <ProjectSummary key={project.id} project={project} />
           ))
         }
