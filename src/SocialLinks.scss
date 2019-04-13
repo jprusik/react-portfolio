@@ -4,6 +4,11 @@
 
 .author-links-primary {
   margin-bottom: $inline-character-margin;
+
+  @media print {
+    flex: 1 4 25%;
+    order: 4;
+  }
 }
 
 .author-links-secondary {
@@ -22,8 +27,16 @@
     flex: 1 1 auto;
     text-decoration: none;
 
+    @media print {
+      text-align: right;
+    }
+
     &:not(:last-child) {
       margin-right: $inline-character-margin * 4;
+
+      @media print {
+        margin-right: 0;
+      }
     }
 
     svg {

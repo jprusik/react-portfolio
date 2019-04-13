@@ -3,6 +3,9 @@
 @import 'styles/layout';
 
 $desktop-view-project-columns: 2;
+$print-project-column-gap: 10px;
+$print-project-column-basis: ($print-viewport-width / $desktop-view-project-columns);
+$print-project-column-width: $print-project-column-basis - ($print-project-column-gap / 2);
 
 .org-project {
   align-content: flex-start;
@@ -15,6 +18,20 @@ $desktop-view-project-columns: 2;
   flex: 2 1 ($small-viewport-breakpoint / $desktop-view-project-columns);
   margin: $inline-sibling-margin;
   padding: $section-padding;
+
+  @media print {
+    background-color: $app-print-background-color;
+    border-width: 0;
+    flex: 2 1 $print-project-column-basis;
+    margin: $inline-sibling-margin 0;
+    max-width: $print-project-column-width;
+    padding: 0;
+
+    // Allow last project in the list to span columns
+    &:last-child {
+      max-width: 100%;
+    }
+  }
 
   .title-section {
     text-align: left;
@@ -58,6 +75,14 @@ $desktop-view-project-columns: 2;
       text-align: left;
       width: 50%;
     }
+
+    .skills {
+      ul {
+        li {
+          padding-right: 0.5em;
+        }
+      }
+    }
   }
 
   .description,
@@ -68,6 +93,10 @@ $desktop-view-project-columns: 2;
     flex: 2 2 100%;
     margin: 0 auto ($inline-sibling-margin * 2) auto;
     max-width: $small-viewport-breakpoint;
+
+    @media print {
+      max-width: 100%;
+    }
   }
 
   .links,

@@ -6,6 +6,10 @@
 .technologies {
   text-align: center;
 
+  @media print {
+    max-width: $print-viewport-width;
+  }
+
   .nav-skills-list,
   .nav-technologies-list {
     @extend %tag-style-list-items;
@@ -20,8 +24,7 @@
     text-shadow: 1px 1px 0 $black;
 
     @media print {
-      font-size: $sub-base-font-size;
-      justify-content: center;
+      font-size: $base-font-size;
       text-shadow: none;
     }
   }

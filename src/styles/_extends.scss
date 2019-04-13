@@ -16,7 +16,8 @@
     padding: 5px;
 
     @media print {
-      background-color: #FFF;
+      background-color: $app-print-background-color;
+      font-weight: normal;
       padding: 0;
     }
   }

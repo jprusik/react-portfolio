@@ -8,12 +8,14 @@ export default function AuthorSummary(props) {
   const { currentRoles, funFacts, locationBasis, links, name } = props;
 
   return [
-    <Logo key="author-logo" className="author-logo" title={name} />,
-    <div key="author-roles" className="author-roles">
-      { currentRoles.map(role => <div key={ role }>{ role }</div>) }
+    <div key="author-head" className="author-head">
+      <Logo className="author-logo" title={name} />
+      <div className="author-roles">
+        { currentRoles.map(role => <div key={ role }>{ role }</div>) }
+      </div>
+      <div className="author-location">{ locationBasis }</div>
+      <SocialLinks { ...links } />
     </div>,
-    <div key="author-location" className="author-location">{ locationBasis }</div>,
-    <SocialLinks key="author-links" { ...links } />,
     <div key="author-fun-facts" className="author-fun-facts">
       { funFacts.map(fact => <span key={fact}>{ fact }</span>) }
     </div>

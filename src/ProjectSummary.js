@@ -30,7 +30,7 @@ export default function ProjectSummary(props) {
   });
 
   return (
-    <div key={project.id} className={`org-project ${project.id} print-hide`}>
+    <div key={project.id} className={`org-project ${project.id}`}>
       <div className="title-section">
         <div className="title">
           <h4>{ project.name }</h4>
@@ -41,13 +41,13 @@ export default function ProjectSummary(props) {
       </div>
       { project.description && <p className="description">{ project.description }</p> }
       { project.links.length > 0 &&
-        <div className="links">
+        <div className="links print-hide">
           <TypedList headerText="Links" headerLevel={5} listItems={project.links} listType="links" />
         </div>
       }
       {
         project.samples.length > 0 &&
-        <div className="samples">
+        <div className="samples print-hide">
           <TypedList headerText="Samples" headerLevel={5} listItems={project.samples} listType="samples" />
         </div>
       }

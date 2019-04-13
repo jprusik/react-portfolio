@@ -1,5 +1,10 @@
 $body-content-width: 66vw;
 $small-viewport-breakpoint: 680px;
+$print-size-ansi-a-width: 742px;
+
+$print-viewport-width: $print-size-ansi-a-width;
+$print-size-ansi-a-height: $print-viewport-width * (11 / 8.5);
+$print-size-legal-height: $print-viewport-width * (14 / 8.5);
 
 $section-padding: 1.5vw;
 $section-margin: 2.5vw;

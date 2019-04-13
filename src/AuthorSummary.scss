@@ -1,42 +1,79 @@
 @import 'styles/colors';
 @import 'styles/layout';
 
-.author-logo {
-  margin: ($section-margin * 2) auto;
-  max-width: $body-content-width * 0.75;
-  position: relative;
+.author-head {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
 
-  path {
-    fill: $app-text-color;
+  @media print {
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-around;
+    margin: 0 auto ($section-margin / 2) auto;
+  }
+
+  .author-logo {
+    margin: $section-margin auto;
+    max-width: $body-content-width * 0.75;
 
     @media print {
-      fill: invert($app-text-color);
+      flex: 1 4 25%;
+      margin: 0;
+      order: 1;
+      width: $print-viewport-width / 3;
+    }
+
+    path {
+      fill: $app-text-color;
+
+      @media print {
+        fill: invert($app-text-color);
+      }
+    }
+  }
+
+  .author-roles,
+  .author-location {
+    margin-bottom: $inline-character-margin;
+    text-align: center;
+
+    @media print {
+      flex: 1 4 25%;
+      margin-bottom: 0;
+    }
+  }
+
+  .author-roles {
+    @media print {
+      order: 2;
+      text-align: right;
+    }
+  }
+
+  .author-location {
+    font-style: italic;
+
+    @media print {
+      margin-left: $inline-character-margin * 2;
+      order: 3;
+      text-align: left;
     }
   }
 }
 
-.author-roles,
-.author-location {
-  margin-bottom: $inline-character-margin;
-  text-align: center;
-}
-
-.author-location {
-  font-style: italic;
-}
-
 .author-fun-facts {
+  border-bottom: 1px dotted $app-text-note;
+  border-top: 1px dotted $app-text-note;
+  color: $app-text-note;
   font-style: italic;
   margin-bottom: $section-margin;
-  color: $app-text-note;
-  border-top: 1px dotted $app-text-note;
-  border-bottom: 1px dotted $app-text-note;
   padding: 0.5em 0;
 
   @media print {
-    color: invert($app-text-note);
-    border-top: 1px dotted invert($app-text-note);
     border-bottom: 1px dotted invert($app-text-note);
+    border-top: 1px dotted invert($app-text-note);
+    color: invert($app-text-note);
   }
 
   span {

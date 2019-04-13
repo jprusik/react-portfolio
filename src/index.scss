@@ -5,10 +5,10 @@
 html {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
+  background-color: $app-background-color;
   font-family: $serif-font;
   font-size: $base-font-size;
   text-rendering: optimizeLegibility;
-  background-color: $app-background-color;
 
   a {
     color: $app-link-color;
@@ -115,23 +115,23 @@ html {
 
 @media print {
   html {
-    width: 100%;
+    background-color: $app-print-background-color;
     margin: 0;
-    background-color: #FFF;
+    width: 100%;
 
     a {
-      color: invert($app-text-color);
+      color: $app-print-text-color;
 
       &:hover,
       &:visited {
-        color: invert($app-text-color);
+        color: $app-print-text-color;
       }
     }
 
     body {
       .app {
-        max-width: 90%;
-        color: invert($app-text-color);
+        color: $app-print-text-color;
+        max-width: 100%;
       }
     }
   }
