@@ -33,66 +33,23 @@ $print-project-column-width: $print-project-column-basis - ($print-project-colum
     }
   }
 
-  .title-section {
-    text-align: left;
-
-    .title {
-      h4 {
-        margin: 0 0 $inline-character-margin 0;
-      }
-
-      div {
-        font-size: $sub-base-font-size;
-      }
-    }
-
-    .team-size,
-    .year {
-      font-size: $sub-base-font-size;
-    }
-  }
-
-  .description {
-    font-family: $condensed-font;
-    text-align: left;
-  }
-
-  .links {
-    padding-top: $inline-sibling-margin * 2;
-  }
-
-  .samples {
-    padding-bottom: $inline-sibling-margin * 2;
-  }
-
-  .two-column-flex {
-    display: flex;
-
-    .skills,
-    .technologies {
-      flex: 2 1 auto;
-      margin: 0 auto;
-      text-align: left;
-      width: 50%;
-    }
-
-    .skills {
-      ul {
-        li {
-          padding-right: 0.5em;
-        }
-      }
-    }
-  }
-
   .description,
   .links,
   .samples,
-  .title-section,
-  .two-column-flex {
+  .skills,
+  .technologies,
+  .title-section {
     flex: 2 2 100%;
     margin: 0 auto ($inline-sibling-margin * 2) auto;
     max-width: $small-viewport-breakpoint;
+
+    &:last-child {
+      margin-bottom: 0;
+
+      @media print {
+        margin-bottom: $inline-sibling-margin * 4;
+      }
+    }
 
     @media print {
       max-width: 100%;
@@ -100,10 +57,11 @@ $print-project-column-width: $print-project-column-basis - ($print-project-colum
   }
 
   .links,
-  .samples {
+  .samples,
+  .skills,
+  .technologies {
     display: flex;
     justify-content: space-between;
-    text-align: center;
 
     h5 {
       flex: 2 1 4vw;
@@ -126,5 +84,34 @@ $print-project-column-width: $print-project-column-basis - ($print-project-colum
         }
       }
     }
+  }
+
+  .title-section {
+    text-align: left;
+
+    .title {
+      h4 {
+        margin: 0 0 $inline-character-margin 0;
+      }
+
+      div {
+        font-size: $sub-base-font-size;
+      }
+    }
+
+    .team-size,
+    .year {
+      font-size: $sub-base-font-size;
+    }
+  }
+
+  .description {
+    font-family: $condensed-font;
+    text-align: left;
+    margin-bottom: $inline-sibling-margin * 4;
+  }
+
+  .technologies {
+    margin-bottom: $inline-sibling-margin * 4;
   }
 }

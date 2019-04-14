@@ -13,7 +13,7 @@ export default function TypedItem(props) {
         return 'available on request';
       }
 
-      return <a href={require(`./content/${item}`)}>{`sample ${itemNumber+1}`}</a>;
+      return <a href={require(`./content/samples/${item}`)}>{`sample ${itemNumber+1}`}</a>;
     default:
       return item;
   }

@@ -40,6 +40,18 @@ export default function ProjectSummary(props) {
         { teamSizeDescription(project.teamSize) }
       </div>
       { project.description && <p className="description">{ project.description }</p> }
+      {
+        project.skills.length > 0 &&
+        <div className="skills">
+          <TypedList headerText="Skills" headerLevel={5} listItems={project.skills} listType="skills" />
+        </div>
+      }
+      {
+        project.technologies.length > 0 &&
+        <div className="technologies">
+          <TypedList headerText="Tech" headerLevel={5} listItems={projectTech} listType="technologies" />
+        </div>
+      }
       { project.links.length > 0 &&
         <div className="links print-hide">
           <TypedList headerText="Links" headerLevel={5} listItems={project.links} listType="links" />
@@ -51,20 +63,6 @@ export default function ProjectSummary(props) {
           <TypedList headerText="Samples" headerLevel={5} listItems={project.samples} listType="samples" />
         </div>
       }
-      <div className="two-column-flex">
-        {
-          project.skills.length > 0 &&
-          <div className="skills">
-            <TypedList headerText="Skills" headerLevel={5} listItems={project.skills} listType="skills" />
-          </div>
-        }
-        {
-          project.technologies.length > 0 &&
-          <div className="technologies">
-            <TypedList headerText="Technologies" headerLevel={5} listItems={projectTech} listType="technologies" />
-          </div>
-        }
-      </div>
     </div>
   );
 }
