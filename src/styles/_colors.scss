@@ -1,14 +1,24 @@
 $black: #282c34;
+$blue: #add8e6;
 $github-grey: #d3d3d3;
 $linkedin-blue: #3371b7;
 $stack-overflow-orange: #f69c55;
 $twitter-blue: #4da7de;
+$violet: #d8bfd8;
+$white: #FFFFFF;
 
 $app-background-color: $black;
-$app-link-color: #add8e6;
-$app-visited-link-color: #d8bfd8;
-$app-text-color: #FFF;
-$app-text-note: #DDDDDD;
+$app-link-color: $blue;
+$app-text-color: $white;
 $app-text-muted-color: $github-grey;
+$app-text-note: $github-grey;
+$app-visited-link-color: $violet;
 
-$tag-background-color: #708090;
+// print colors
+$app-print-background-color: $white;
+$app-print-text-color: #000000;
+
+// calculated colors
+$tag-background-color: lighten($app-background-color, 20%);
+$org-summary-background-color: lighten($app-background-color, 10%);
+$project-summary-border-color: darken($tag-background-color, 20%);

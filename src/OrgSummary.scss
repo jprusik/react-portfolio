@@ -3,7 +3,7 @@
 @import 'styles/layout';
 
 .org-summary {
-  background-color: lighten($app-background-color, 10%);
+  background-color: $org-summary-background-color;
   padding: $section-padding;
   margin: $section-margin 0;
 

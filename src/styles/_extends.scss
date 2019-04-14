@@ -11,13 +11,11 @@
     background-color: $tag-background-color;
     border-radius: $border-radius;
     display: flex;
-    font-weight: bold;
     margin: 5px;
     padding: 5px;
 
     @media print {
       background-color: $app-print-background-color;
-      font-weight: normal;
       padding: 0;
     }
   }

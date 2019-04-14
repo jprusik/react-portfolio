@@ -9,9 +9,9 @@ $print-project-column-width: $print-project-column-basis - ($print-project-colum
 
 .org-project {
   align-content: flex-start;
-  background-color: lighten($app-background-color, 20%);
+  background-color: $tag-background-color;
   border-radius: $border-radius;
-  border: 1px solid darken($app-text-color, 50%);
+  border: 1px solid $project-summary-border-color;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
