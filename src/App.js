@@ -7,11 +7,11 @@ import data from './content/data.json';
 
 class App extends Component {
   render() {
-    const { author, projects, organizations, education } = data;
+    const { author, projects, organizations, education, technologies } = data;
 
     return [
       <AuthorSummary key="author-summary" { ...author }/>,
-      <PortfolioNav key="portfolio-nav" projects={ projects } />,
+      <PortfolioNav key="portfolio-nav" projects={ projects } technologies={ technologies } />,
       <PortfolioTimeline key="portfolio-timeline" projects={ projects } organizations={ organizations } education= { education } />,
       <Footer key="footer" />
     ];
