@@ -20,3 +20,23 @@
     }
   }
 }
+
+%remove-button {
+  &:hover {
+    > .remove-button {
+      opacity: 0.25;
+    }
+  }
+
+  > .remove-button {
+    cursor: pointer;
+    opacity: 0;
+    position: absolute;
+    right: $section-padding / 4;
+    top: $section-padding / 4;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+}

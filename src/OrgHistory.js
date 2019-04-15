@@ -1,6 +1,6 @@
 import React from 'react';
 import OrgSummary from './OrgSummary';
-import { arrayOf, object } from 'prop-types';
+import { arrayOf, func, object } from 'prop-types';
 import './OrgHistory.scss';
 import { orderBy } from 'lodash';
 
@@ -10,11 +10,12 @@ const endedYear = (org) => {
 };
 
 export default function OrgHistory(props) {
-  const { projects, organizations } = props;
+  const { organizations, projects, updateFilter } = props;
   const orgHeader = <h2 key="organizations-header">Organizations</h2>;
   const orgSummaries = orderBy(organizations, [endedYear, 'started'], ['desc', 'desc']).map(org => {
     const orgProjects = projects.filter(project => (project.org === org.id) && !project.exclude);
     const orgSummaryProps = {
+      updateFilter: updateFilter,
       projects: orgProjects,
       org
     };
@@ -26,6 +27,7 @@ export default function OrgHistory(props) {
 }
 
 OrgHistory.propTypes = {
+  organizations: arrayOf(object).isRequired,
   projects: arrayOf(object).isRequired,
-  organizations: arrayOf(object).isRequired
+  updateFilter: func.isRequired
 };

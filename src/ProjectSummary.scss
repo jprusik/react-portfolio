@@ -1,4 +1,5 @@
 @import 'styles/colors';
+@import 'styles/extends';
 @import 'styles/font';
 @import 'styles/layout';
 
@@ -18,6 +19,7 @@ $print-project-column-width: $print-project-column-basis - ($print-project-colum
   flex: 2 1 ($small-viewport-breakpoint / $desktop-view-project-columns);
   margin: $inline-sibling-margin;
   padding: $section-padding;
+  position: relative;
 
   @media print {
     background-color: $app-print-background-color;
@@ -32,6 +34,8 @@ $print-project-column-width: $print-project-column-basis - ($print-project-colum
       max-width: 100%;
     }
   }
+
+  @extend %remove-button;
 
   .description,
   .links,

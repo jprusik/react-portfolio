@@ -1,11 +1,13 @@
 import React from 'react';
-import { object } from 'prop-types';
+import { func, object } from 'prop-types';
 import TypedList from './TypedList';
 import data from './content/data.json';
 import './ProjectSummary.scss';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faMinusSquare } from '@fortawesome/free-solid-svg-icons';
 
 export default function ProjectSummary(props) {
-  const { project } = props;
+  const { project, updateFilter } = props;
 
   const teamSizeDescription = (teamSize) => {
     if (!teamSize) {
@@ -31,6 +33,7 @@ export default function ProjectSummary(props) {
 
   return (
     <div key={project.id} className={`org-project ${project.id}`}>
+      <FontAwesomeIcon icon={faMinusSquare} className="remove-button print-hide" onClick={() => updateFilter('add', 'projects', project.id)} />
       <div className="title-section">
         <div className="title">
           <h4>{ project.name }</h4>
@@ -68,5 +71,6 @@ export default function ProjectSummary(props) {
 }
 
 ProjectSummary.propTypes = {
-  project: object.isRequired
+  project: object.isRequired,
+  updateFilter: func.isRequired
 };

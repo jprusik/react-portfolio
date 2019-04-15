@@ -1,17 +1,20 @@
 import React from 'react';
-import { arrayOf, object } from 'prop-types';
+import { arrayOf, func, object } from 'prop-types';
 import TypedList from './TypedList';
 import ProjectSummary from './ProjectSummary';
 import './OrgSummary.scss';
 import { orderBy } from 'lodash';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faMinusSquare } from '@fortawesome/free-solid-svg-icons';
 
 export default function OrgSummary(props) {
-  const { projects, org } = props;
+  const { org, projects, updateFilter } = props;
   const employedTimespan = <div className="employed-timespan">{ [ org.started, org.ended ].join(' - ') }</div>;
   const orgLocation = org.location && <span className="org-location">({ org.location })</span>;
 
   return (
     <div className={`org-summary ${org.id}`}>
+      <FontAwesomeIcon icon={faMinusSquare} className="remove-button print-hide" onClick={() => updateFilter('add', 'organizations', org.id)} />
       <div className="org-overview">
         { org.name && <h3>{ org.name }</h3> }
         { orgLocation }
@@ -32,7 +35,7 @@ export default function OrgSummary(props) {
       <div className="org-projects">
         {
           orderBy(projects, ['year'], ['desc']).map(project => (
-            <ProjectSummary key={project.id} project={project} />
+            <ProjectSummary key={project.id} project={project} updateFilter={updateFilter} />
           ))
         }
       </div>
@@ -42,5 +45,6 @@ export default function OrgSummary(props) {
 
 OrgSummary.propTypes = {
   projects: arrayOf(object),
-  org: object.isRequired
+  org: object.isRequired,
+  updateFilter: func.isRequired
 };

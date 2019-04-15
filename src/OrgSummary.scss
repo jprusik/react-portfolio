@@ -1,11 +1,13 @@
 @import 'styles/colors';
+@import 'styles/extends';
 @import 'styles/font';
 @import 'styles/layout';
 
 .org-summary {
   background-color: $org-summary-background-color;
-  padding: $section-padding;
   margin: $section-margin 0;
+  padding: $section-padding;
+  position: relative;
 
   @media print {
     background-color: $app-print-background-color;
@@ -15,6 +17,8 @@
       border-bottom: 1px solid $app-text-muted-color;
     }
   }
+
+  @extend %remove-button;
 
   .org-overview {
     margin-bottom: $section-margin;
