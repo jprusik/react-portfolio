@@ -1,6 +1,17 @@
 {
   "name": "react-portfolio",
   "version": "0.1.0",
+  "description": "",
+  "repository": "github:jprusik/react-portfolio",
+  "author": {
+    "name": "Jonathan Prusik",
+    "email": "jprusik@classynemesis.com",
+    "url": "https://jonathanprusik.com"
+  },
+  "bugs": {
+    "url": "https://github.com/jprusik/react-portfolio/issues"
+  },
+  "license": "MIT",
   "private": true,
   "browserslist": [
     ">0.2%",
@@ -25,7 +36,7 @@
   },
   "devDependencies": {
     "json-loader": "^0.5.7",
-    "node-sass": "^4.11.0"
+    "node-sass": "^4.14.1"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -35,6 +46,7 @@
     "build": ". ./src/content/.env && react-scripts build && cp ./src/content/favicon.ico ./build/favicon.ico ; cp ./src/content/manifest.json ./build/manifest.json",
     "deploy": "./src/content/deploy.sh",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "lint": "eslint ./src"
   }
 }

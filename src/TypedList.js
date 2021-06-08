@@ -15,7 +15,7 @@ export default function TypedList(props) {
   const HeaderTag = headerLevel ? `h${headerLevel}` : 'strong';
   const typedListHeader = headerText && <HeaderTag key={`${listType}-list-header`} className={`${listType}-list-header`}>{ headerText }</HeaderTag>;
   const formattedListItems = listItems.map((item, index) => (
-    <li key={item} className="typed-list">
+    <li key={item} className="typed-list-item">
       <TypedItem item={item} itemNumber={index} itemType={listType} />
     </li>
   ));

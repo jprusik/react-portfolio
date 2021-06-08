@@ -13,10 +13,30 @@
     display: flex;
     margin: 5px;
     padding: 5px;
+    cursor: pointer;
+    border: 1px solid $tag-background-color;
+    user-select: none;
 
     @media print {
       background-color: $app-print-background-color;
       padding: 0;
+      border: none;
+    }
+
+    &:active {
+      background-color: $blue;
+    }
+
+    &:hover {
+      background-color: transparent;
+
+      &.off-state {
+        background-color: $tag-background-color;
+      }
+    }
+
+    &.off-state {
+      background-color: transparent;
     }
   }
 }
