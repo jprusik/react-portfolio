@@ -28,7 +28,7 @@ export default function ProjectSummary(props) {
   const projectTech = project.technologies.map(techKey => {
     const techByKey = data.technologies.find(techItem => techItem.id === techKey);
 
-    return techByKey.name;
+    return techByKey?.name || [];
   });
 
   return (
