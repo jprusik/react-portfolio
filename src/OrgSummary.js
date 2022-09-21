@@ -29,7 +29,7 @@ export default function OrgSummary(props) {
           </div>
         </div>
         <div className="org-tasks">
-          <TypedList key="org-recurring-tasks-list" headerText="Recurring Tasks" headerLevel={4} listItems={org.recurringTasks} listType="tasks" />
+          <TypedList key="org-recurring-tasks-list" headerText="Responsibilities" headerLevel={4} listItems={org.recurringTasks} listType="tasks" />
         </div>
       </div>
       <div className="org-projects">

@@ -25,11 +25,12 @@ export default function ProjectSummary(props) {
     return descriptionItems.length > 0 ? <div>({ descriptionItems.join(', ') })</div> : null;
   };
 
-  const projectTech = project.technologies.map(techKey => {
+  const projectTech = project.technologies.reduce((technologies, techKey) => {
     const techByKey = data.technologies.find(techItem => techItem.id === techKey);
 
-    return techByKey?.name || [];
-  });
+    return techByKey?.name ?
+      [...technologies, techByKey.name] : technologies;
+  }, []);
 
   return (
     <div key={project.id} className={`org-project ${project.id}`}>

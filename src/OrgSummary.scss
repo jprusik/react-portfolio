@@ -52,7 +52,7 @@
       }
 
       .org-roles {
-        padding-right: $inline-sibling-margin;
+        padding-right: ($inline-sibling-margin * 4);
         text-align: right;
       }
 
