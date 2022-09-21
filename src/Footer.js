@@ -1,6 +1,6 @@
 import React from 'react';
 import './Footer.scss';
-import ExternalDomainLink from './ExternalDomainLink';
+import {ExternalDomainLink} from './ExternalDomainLink';
 
 export default function Footer() {
   return (

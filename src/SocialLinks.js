@@ -1,6 +1,6 @@
 import React from 'react';
 import { string } from 'prop-types';
-import ExternalDomainLink from './ExternalDomainLink';
+import {ExternalDomainLink} from './ExternalDomainLink';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faGithub,

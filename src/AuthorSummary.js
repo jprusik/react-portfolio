@@ -7,19 +7,21 @@ import { ReactComponent as Logo } from './content/logo.svg';
 export default function AuthorSummary(props) {
   const { currentRoles, funFacts, locationBasis, links, name } = props;
 
-  return [
-    <div key="author-head" className="author-head">
-      <Logo className="author-logo" title={name} />
-      <div className="author-roles">
-        { currentRoles.map(role => <div key={ role }>{ role }</div>) }
+  return (
+    <React.Fragment>
+      <div className="author-head">
+        <Logo className="author-logo" title={name} />
+        <div className="author-roles">
+          { currentRoles.map(role => <div key={ role }>{ role }</div>) }
+        </div>
+        <div className="author-location">{ locationBasis }</div>
+        <SocialLinks { ...links } />
       </div>
-      <div className="author-location">{ locationBasis }</div>
-      <SocialLinks { ...links } />
-    </div>,
-    <div key="author-fun-facts" className="author-fun-facts">
-      { funFacts.map(fact => <span key={fact}>{ fact }</span>) }
-    </div>
-  ];
+      <div className="author-fun-facts">
+        { funFacts.map(fact => <span key={fact}>{ fact }</span>) }
+      </div>
+    </React.Fragment>
+  );
 }
 
 AuthorSummary.propTypes = {

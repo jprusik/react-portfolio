@@ -10,12 +10,12 @@ const endedYear = (org) => {
 };
 
 export default function OrgHistory(props) {
-  const { organizations, projects, updateFilter } = props;
+  const { organizations, projects, updateDisplayFilter } = props;
   const orgHeader = <h2 key="organizations-header">Organizations</h2>;
   const orgSummaries = orderBy(organizations, [endedYear, 'started'], ['desc', 'desc']).map(org => {
     const orgProjects = projects.filter(project => (project.org === org.id) && !project.exclude);
     const orgSummaryProps = {
-      updateFilter: updateFilter,
+      updateDisplayFilter: updateDisplayFilter,
       projects: orgProjects,
       org
     };
@@ -29,5 +29,5 @@ export default function OrgHistory(props) {
 OrgHistory.propTypes = {
   organizations: arrayOf(object).isRequired,
   projects: arrayOf(object).isRequired,
-  updateFilter: func.isRequired
+  updateDisplayFilter: func.isRequired
 };
