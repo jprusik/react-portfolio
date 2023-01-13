@@ -6,7 +6,7 @@
 $desktop-view-project-columns: 2;
 $print-project-column-gap: 10px;
 $print-project-column-basis: ($print-viewport-width / $desktop-view-project-columns);
-$print-project-column-width: $print-project-column-basis - ($print-project-column-gap / 2);
+$print-project-column-width: $print-project-column-basis - ($print-project-column-gap / 2) - 10;
 
 .org-project {
   align-content: flex-start;
