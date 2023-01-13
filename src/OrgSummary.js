@@ -5,7 +5,7 @@ import ProjectSummary from './ProjectSummary';
 import './OrgSummary.scss';
 import { orderBy } from 'lodash';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faMinusSquare } from '@fortawesome/free-solid-svg-icons';
+import { faTrashCan } from '@fortawesome/free-solid-svg-icons';
 
 export default function OrgSummary(props) {
   const { org, projects, updateDisplayFilter } = props;
@@ -14,7 +14,7 @@ export default function OrgSummary(props) {
 
   return (
     <div className={`org-summary ${org.id}`}>
-      <FontAwesomeIcon icon={faMinusSquare} className="remove-button print-hide" onClick={() => updateDisplayFilter('add', 'organizations', org.id)} />
+      <FontAwesomeIcon icon={faTrashCan} className="remove-button print-hide" onClick={() => updateDisplayFilter('add', 'organizations', org.id)} />
       <div className="org-overview">
         { org.name && <h3>{ org.name }</h3> }
         { orgLocation }

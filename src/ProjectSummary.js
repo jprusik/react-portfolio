@@ -4,7 +4,7 @@ import TypedList from './TypedList';
 import data from './content/data.json';
 import './ProjectSummary.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faMinusSquare } from '@fortawesome/free-solid-svg-icons';
+import { faTrashCan } from '@fortawesome/free-solid-svg-icons';
 
 export default function ProjectSummary(props) {
   const { project, updateDisplayFilter } = props;
@@ -34,7 +34,7 @@ export default function ProjectSummary(props) {
 
   return (
     <div key={project.id} className={`org-project ${project.id}`}>
-      <FontAwesomeIcon icon={faMinusSquare} className="remove-button print-hide" onClick={() => updateDisplayFilter('add', 'projects', project.id)} />
+      <FontAwesomeIcon icon={faTrashCan} className="remove-button print-hide" onClick={() => updateDisplayFilter('add', 'projects', project.id)} />
       <div className="title-section">
         <div className="title">
           <h4>{ project.name }</h4>
