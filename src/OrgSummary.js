@@ -50,17 +50,22 @@ export default function OrgSummary(props) {
           />
         </div>
       </div>
-      <div className="org-projects">
-        {
-          orderBy(projects, ['year'], ['desc']).map(project => (
-            <ProjectSummary
-              key={project.id}
-              project={project}
-              updateDisplayFilter={updateDisplayFilter}
-            />
-          ))
-        }
-      </div>
+      {projects.length > 0 && (
+        <React.Fragment>
+          <h4 className="projects-list-header">Project Examples</h4>
+          <div className="org-projects">
+            {
+              orderBy(projects, ['year'], ['desc']).map(project => (
+                <ProjectSummary
+                  key={project.id}
+                  project={project}
+                  updateDisplayFilter={updateDisplayFilter}
+                />
+              ))
+            }
+          </div>
+        </React.Fragment>
+      )}
     </div>
   );
 }

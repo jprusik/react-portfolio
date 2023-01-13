@@ -104,5 +104,10 @@
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
+
+    h4 {
+      margin: 0;
+      font-family: $serif-font;
+    }
   }
 }

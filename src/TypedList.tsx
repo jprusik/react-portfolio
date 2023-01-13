@@ -2,6 +2,7 @@ import React from 'react';
 import {isEmpty} from 'lodash';
 import {TypedItem} from './TypedItem';
 import './TypedList.scss';
+import {HeaderTag} from './HeaderTag';
 
 type TypedListProps = {
   headerText?: string,
@@ -20,14 +21,16 @@ export default function TypedList({
     return null;
   }
 
-  // Capitalization required for tag replacement
-  const HeaderTag =
-    (headerLevel ? `h${headerLevel}` : 'strong') as keyof JSX.IntrinsicElements;
-
   return (
     <React.Fragment>
-      {headerText && (
-        <HeaderTag key={`${listType}-list-header`} className={`${listType}-list-header`}>{ headerText }</HeaderTag>
+      {(headerText && headerLevel) && (
+        <HeaderTag
+          key={`${listType}-list-header`}
+          type={listType}
+          level={headerLevel}
+        >
+          { headerText }
+        </HeaderTag>
       )}
       <ul key={`${listType}-list`} className={`${listType}-list`}>
         {listItems.map((item, index) => (
