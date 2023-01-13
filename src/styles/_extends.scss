@@ -13,9 +13,12 @@
     display: flex;
     margin: 5px;
     padding: 5px;
-    cursor: pointer;
+    cursor: default;
     border: 1px solid $tag-background-color;
-    user-select: none;
+
+    // For now, these should not behave as buttons because they have no actions, yet
+    // cursor: pointer;
+    // user-select: none;
 
     @media print {
       background-color: $app-print-background-color;
