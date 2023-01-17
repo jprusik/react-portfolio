@@ -70,10 +70,18 @@
   margin-bottom: $section-margin;
   padding: 0.5em 0;
 
+  a {
+    text-decoration: none;
+  }
+
   @media print {
     border-bottom: 1px dotted invert($app-text-note);
     border-top: 1px dotted invert($app-text-note);
     color: invert($app-text-note);
+
+    a {
+      font-weight: bold;
+    }
   }
 
   span {

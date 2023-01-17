@@ -18,7 +18,9 @@ export default function AuthorSummary(props) {
         <SocialLinks { ...links } />
       </div>
       <div className="author-fun-facts">
-        { funFacts.map(fact => <span key={fact}>{ fact }</span>) }
+        { funFacts.map(fact => (
+          <span key={fact} dangerouslySetInnerHTML={{__html: fact}} />
+        )) }
       </div>
     </React.Fragment>
   );
