@@ -1,12 +1,16 @@
 import React from 'react';
 import { arrayOf, string, object } from 'prop-types';
-import SocialLinks from './SocialLinks';
+import { SocialLinksContainers } from './SocialLinksContainers';
 import './AuthorSummary.scss';
 import { ReactComponent as Logo } from './content/logo.svg';
 
-export default function AuthorSummary(props) {
-  const { currentRoles, funFacts, locationBasis, links, name } = props;
-
+export default function AuthorSummary({
+  currentRoles,
+  funFacts,
+  locationBasis,
+  links,
+  name
+}) {
   return (
     <React.Fragment>
       <div className="author-head">
@@ -15,7 +19,7 @@ export default function AuthorSummary(props) {
           { currentRoles.map(role => <div key={ role }>{ role }</div>) }
         </div>
         <div className="author-location">{ locationBasis }</div>
-        <SocialLinks { ...links } />
+        <SocialLinksContainers { ...links } />
       </div>
       <div className="author-fun-facts">
         { funFacts.map(fact => (
