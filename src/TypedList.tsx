@@ -17,6 +17,7 @@ export default function TypedList({
   listItems,
   listType
 }: TypedListProps): JSX.Element | null {
+  // @TODO check the null case in the parent component
   if (isEmpty(listItems)) {
     return null;
   }

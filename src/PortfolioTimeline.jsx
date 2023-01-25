@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Education from './Education';
+import { Education } from './Education';
 import OrgHistory from './OrgHistory';
 import { arrayOf, object } from 'prop-types';
 import { filteredReducer, timelineInitialState } from './ActionReducers';

@@ -16,8 +16,6 @@ const controlledOrderOrgs = [
 
 export default function OrgHistory(props) {
   const { organizations, projects, updateDisplayFilter } = props;
-  /* eslint-disable no-console */
-  console.log('organizations', organizations);
   const orgHeader = <h2 key="organizations-header">Organizations</h2>;
   const orgSummaries = orderBy(organizations, [endedYear, 'started'], ['desc', 'desc'])
     // make sure "special" orgs are at the end, regardless of timeline placement
@@ -43,7 +41,6 @@ export default function OrgHistory(props) {
       return !org.exclude && <OrgSummary key={org.id} {...orgSummaryProps} />;
     });
 
-  console.log('orgSummaries', flatten(orgSummaries, true));
   return <div className="organization-history">{[orgHeader, OrgSummariesChildren]}</div>;
 }
 

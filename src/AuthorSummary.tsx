@@ -1,39 +1,33 @@
 import React from 'react';
-import { arrayOf, string, object } from 'prop-types';
-import { SocialLinksContainers } from './SocialLinksContainers';
-import './AuthorSummary.scss';
+import { Author as AuthorSummaryProps } from './global/types';
 import { ReactComponent as Logo } from './content/logo.svg';
+import './AuthorSummary.scss';
+import { SocialLinksContainers } from './SocialLinksContainers';
 
-export default function AuthorSummary({
+export function AuthorSummary({
   currentRoles,
   funFacts,
   locationBasis,
   links,
   name
-}) {
+}: AuthorSummaryProps) {
   return (
     <React.Fragment>
       <div className="author-head">
         <Logo className="author-logo" title={name} />
         <div className="author-roles">
-          { currentRoles.map(role => <div key={ role }>{ role }</div>) }
+          {currentRoles.map(role => (
+            <div key={role}>{ role }</div>
+          ))}
         </div>
         <div className="author-location">{ locationBasis }</div>
         <SocialLinksContainers { ...links } />
       </div>
       <div className="author-fun-facts">
-        { funFacts.map(fact => (
+        {funFacts.map(fact => (
           <span key={fact} dangerouslySetInnerHTML={{__html: fact}} />
-        )) }
+        ))}
       </div>
     </React.Fragment>
   );
 }
-
-AuthorSummary.propTypes = {
-  currentRoles: arrayOf(string),
-  funFacts: arrayOf(string),
-  locationBasis: string,
-  links: object,
-  name: string
-};

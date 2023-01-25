@@ -1,13 +1,36 @@
+export type AuthorLinks = {
+  email?: string;
+  gitHubHandle?: string;
+  linkedInHandle?: string;
+  stackOverflow?: string;
+  twitterHandle?: string;
+  websiteDomain?: string;
+}
+
 export type Author = {
-  // @TODO
+  currentRoles: string[];
+  funFacts: string[];
+  locationBasis: string;
+  links: AuthorLinks;
+  name: string;
 }
 
 export type Education = {
-  // @TODO
+  name: string;
+  description: string;
+  year: string;
 }
 
-export type Organizations = {
-  // @TODO
+export type Organization = {
+  id: string;
+  name: string;
+  description: string;
+  recurringTasks: string[];
+  location: string;
+  started: string;
+  ended: string;
+  roles: string[];
+  teams: string[];
 }
 
 export type Project = {
