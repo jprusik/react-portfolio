@@ -16,10 +16,11 @@ export function Education (
           <div key={name} className="education-entry">
             <div className="education-name">
               { name && <h4>{ name }</h4> }
-              { year && <span>{ year }</span> }
+              { year && <span className="print-hide">{ year }</span> }
             </div>
             <div className="education-description">
-              { description && <p>{ description }</p> }
+              { description && <p className="print-hide">{ description }</p> }
+              { year && <span className="print-show">{ year }</span> }
             </div>
           </div>
         ))

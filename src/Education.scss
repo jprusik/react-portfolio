@@ -1,4 +1,5 @@
 @import 'styles/layout';
+@import 'styles/font';
 
 .education {
   .education-header {
@@ -9,11 +10,16 @@
     display: flex;
     align-items: flex-start;
     margin: $section-margin 0;
+    line-height: $h4-font-size;
 
     .education-name {
       flex: 1 1 40%;
       margin-right: $inline-sibling-margin;
       text-align: right;
+
+      @media print {
+        flex: 1 1 50%;
+      }
 
       h4 {
         margin: 0;
@@ -24,6 +30,10 @@
       flex: 1 1 60%;
       margin-left: $inline-sibling-margin;
       text-align: left;
+
+      @media print {
+        flex: 1 1 50%;
+      }
 
       p {
         margin: 0;
