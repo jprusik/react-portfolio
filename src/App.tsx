@@ -16,6 +16,7 @@ export function App (): JSX.Element {
   } = data;
 
   const displayedProjects = projects.filter(({hide}) => !hide);
+  const displayedOrganizations = organizations.filter(({hide}) => !hide);
 
   return (
     <Fragment>
@@ -27,7 +28,7 @@ export function App (): JSX.Element {
       />
       <PortfolioTimeline
         projects={displayedProjects}
-        organizations={organizations}
+        organizations={displayedOrganizations}
         education={education}
       />
       <Footer />
