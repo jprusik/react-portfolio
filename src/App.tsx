@@ -1,11 +1,11 @@
-import React from 'react';
+import { Fragment } from 'react';
 import { AuthorSummary } from './AuthorSummary';
 import { Footer } from './Footer';
-import PortfolioNav from './PortfolioNav';
-import PortfolioTimeline from './PortfolioTimeline';
+import { PortfolioNav } from './PortfolioNav';
+import { PortfolioTimeline } from './PortfolioTimeline';
 import data from './content/data.json';
 
-export function App(): JSX.Element {
+export function App (): JSX.Element {
   const {
     author,
     projects,
@@ -18,7 +18,7 @@ export function App(): JSX.Element {
   const displayedProjects = projects.filter(({hide}) => !hide);
 
   return (
-    <React.Fragment>
+    <Fragment>
       <AuthorSummary {...author} />
       <PortfolioNav
         projects={projects}
@@ -31,6 +31,6 @@ export function App(): JSX.Element {
         education={education}
       />
       <Footer />
-    </React.Fragment>
+    </Fragment>
   );
 }

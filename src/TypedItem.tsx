@@ -1,5 +1,5 @@
-import React from 'react';
-import {ExternalDomainLink} from './ExternalDomainLink';
+import { Fragment } from 'react';
+import { ExternalDomainLink } from './ExternalDomainLink';
 
 type TypedItemProps = {
   item: string;
@@ -7,21 +7,29 @@ type TypedItemProps = {
   itemType: string;
 };
 
-export function TypedItem({
+export function TypedItem ({
   item,
   itemNumber,
   itemType
 }: TypedItemProps): JSX.Element {
   switch (itemType) {
     case 'links':
-      return <ExternalDomainLink href={item}>{`link ${itemNumber+1}`}</ExternalDomainLink>;
+      return (
+        <ExternalDomainLink href={item}>
+          {`link ${itemNumber+1}`}
+        </ExternalDomainLink>
+      );
     case 'samples':
       if (item === 'on-request') {
-        return <React.Fragment>available on request</React.Fragment>;
+        return <Fragment>available on request</Fragment>;
       }
 
-      return <a href={require(`./content/samples/${item}`)}>{`sample ${itemNumber+1}`}</a>;
+      return (
+        <a href={require(`./content/samples/${item}`)}>
+          {`sample ${itemNumber+1}`}
+        </a>
+      );
     default:
-      return <React.Fragment>{item}</React.Fragment>;
+      return <Fragment>{item}</Fragment>;
   }
 }

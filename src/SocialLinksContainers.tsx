@@ -1,5 +1,5 @@
-import React from 'react';
-import { AuthorLinks as SocialLinksContainersProps } from './global/types';
+import { Fragment } from 'react';
+import { AuthorLinks as SocialLinksContainersProps } from './types';
 import './SocialLinksContainers.scss';
 import {
   GitHubLink,
@@ -10,7 +10,7 @@ import {
   LinkedInLink
 } from './SocialLinks';
 
-export function SocialLinksContainers({
+export function SocialLinksContainers ({
   email,
   gitHubHandle,
   linkedInHandle,
@@ -19,7 +19,7 @@ export function SocialLinksContainers({
   websiteDomain,
 }: SocialLinksContainersProps): JSX.Element {
   return (
-    <React.Fragment>
+    <Fragment>
       <div key="author-links-primary" className="author-links-primary">
         {[
           email && (
@@ -68,6 +68,6 @@ export function SocialLinksContainers({
           ),
         ]}
       </div>
-    </React.Fragment>
+    </Fragment>
   );
 }

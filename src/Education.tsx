@@ -1,7 +1,7 @@
-import { Education as EducationEntry } from './global/types';
+import { Education as EducationEntry } from './types';
 import './Education.scss';
 
-export function Education(
+export function Education (
   { education }: { education: Array<EducationEntry> }
 ): JSX.Element {
   return (

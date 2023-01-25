@@ -1,16 +1,14 @@
-import React from 'react';
-
 type HeaderTagProps = {
   children: React.ReactNode;
   level: number,
   type?: string
 };
 
-export function HeaderTag({
+export function HeaderTag ({
   children,
   level,
   type = 'default'
-}: HeaderTagProps): JSX.Element | null {
+}: HeaderTagProps): JSX.Element {
   // Capitalization required for tag replacement
   const HeaderTag =
     (level ? `h${level}` : 'strong') as keyof JSX.IntrinsicElements;

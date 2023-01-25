@@ -1,6 +1,6 @@
-import React from 'react';
-import {Project, Technology} from './global/types';
-import TypedList from './TypedList';
+import { Fragment } from 'react';
+import { Project, Technology } from './types';
+import { TypedList } from './TypedList';
 import './PortfolioNav.scss';
 
 type PortfolioNavProps = {
@@ -9,7 +9,7 @@ type PortfolioNavProps = {
   technologies: Array<Technology>;
 }
 
-export default function PortfolioNav({
+export function PortfolioNav ({
   projects,
   skills,
   technologies
@@ -36,23 +36,27 @@ export default function PortfolioNav({
   );
 
   return (
-    <React.Fragment>
+    <Fragment>
       <div key="tech" className="technologies">
-        <TypedList
-          headerText="Technologies"
-          headerLevel={2}
-          listItems={sortedFilteredTechnames}
-          listType="nav-technologies"
-        />
+        {sortedFilteredTechnames.length > 0 && (
+          <TypedList
+            headerText="Technologies"
+            headerLevel={2}
+            listItems={sortedFilteredTechnames}
+            listType="nav-technologies"
+          />
+        )}
       </div>
       <div key="skills" className="skills">
-        <TypedList
-          headerText="Skills"
-          headerLevel={2}
-          listItems={sortedSkills}
-          listType="nav-skills"
-        />
+        {sortedSkills.length > 0 && (
+          <TypedList
+            headerText="Skills"
+            headerLevel={2}
+            listItems={sortedSkills}
+            listType="nav-skills"
+          />
+        )}
       </div>
-    </React.Fragment>
+    </Fragment>
   );
 }

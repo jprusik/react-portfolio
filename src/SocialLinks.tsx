@@ -1,4 +1,3 @@
-import React from 'react';
 import { ExternalDomainLink } from './ExternalDomainLink';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {

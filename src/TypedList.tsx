@@ -1,8 +1,7 @@
-import React from 'react';
-import {isEmpty} from 'lodash';
-import {TypedItem} from './TypedItem';
+import { Fragment } from 'react';
+import { TypedItem } from './TypedItem';
 import './TypedList.scss';
-import {HeaderTag} from './HeaderTag';
+import { HeaderTag } from './HeaderTag';
 
 type TypedListProps = {
   headerText?: string,
@@ -11,19 +10,14 @@ type TypedListProps = {
   listType: string
 };
 
-export default function TypedList({
+export function TypedList ({
   headerText,
   headerLevel,
   listItems,
   listType
-}: TypedListProps): JSX.Element | null {
-  // @TODO check the null case in the parent component
-  if (isEmpty(listItems)) {
-    return null;
-  }
-
+}: TypedListProps): JSX.Element {
   return (
-    <React.Fragment>
+    <Fragment>
       {(headerText && headerLevel) && (
         <HeaderTag
           key={`${listType}-list-header`}
@@ -40,6 +34,6 @@ export default function TypedList({
           </li>
         ))}
       </ul>
-    </React.Fragment>
+    </Fragment>
   );
 }

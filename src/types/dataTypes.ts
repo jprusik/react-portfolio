@@ -10,46 +10,48 @@ export type AuthorLinks = {
 export type Author = {
   currentRoles: string[];
   funFacts: string[];
-  locationBasis: string;
   links: AuthorLinks;
+  locationBasis: string;
   name: string;
 }
 
 export type Education = {
-  name: string;
   description: string;
+  name: string;
   year: string;
 }
 
 export type Organization = {
   id: string;
-  name: string;
   description: string;
-  recurringTasks: string[];
-  location: string;
-  started: string;
   ended: string;
+  exclude?: boolean;
+  location?: string;
+  name: string;
+  recurringTasks?: string[];
   roles: string[];
+  started: string;
   teams: string[];
 }
 
 export type Project = {
+  id: string;
   audience: string;
   description: string;
-  id: string;
+  exclude?: boolean;
   links: string[];
   name: string;
   openSource: boolean;
   org: string;
   samples: string[];
   skills: string[];
-  teamSize: string;
+  teamSize: string; // @TODO This should be a defined string enum or number
   technologies: string[];
   year: string;
 }
 
 export type Technology = {
   id: string;
-  name: string;
   hide?: boolean;
+  name: string;
 }
