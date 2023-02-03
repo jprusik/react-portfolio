@@ -63,12 +63,14 @@
 }
 
 .author-fun-facts {
-  border-bottom: 1px dotted $app-text-note;
+  margin-bottom: $section-margin;
   border-top: 1px dotted $app-text-note;
+  border-bottom: 1px dotted $app-text-note;
+  padding: 0.5em 0;
+  text-align: center;
   color: $app-text-note;
   font-style: italic;
-  margin-bottom: $section-margin;
-  padding: 0.5em 0;
+  max-width: 70%;
 
   a {
     text-decoration: none;
